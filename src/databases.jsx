@@ -6,7 +6,7 @@ function Databases() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("/api/databases")
+    fetch("/api/tables")
       .then((res) => res.json())
       .then((data) => {
         setDatabases(data);
