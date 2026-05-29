@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+const BASE_URL = "http://18.118.169.82:5000";
 
 const foodEmojis = ["🍱","🥗","🍛","🥘","🍲","🥙","🍜","🥡"];
 
@@ -11,7 +12,7 @@ export default function Login() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    if (token) navigate("/api/afterlogin", { replace: true });
+    if (token) navigate(`${BASE_URL}/api/afterlogin`, { replace: true });
   }, [navigate]);
 
   const startY = useRef(0);

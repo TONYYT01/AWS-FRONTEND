@@ -1,7 +1,7 @@
-
+const BASE_URL = "http://18.118.169.82:5000";
 /* ================= SIGNUP ================= */
 export async function signup(data) {
-  const res = await fetch(`/api/signup`, {
+  const res = await fetch(`${BASE_URL}/api/signup`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -11,7 +11,7 @@ export async function signup(data) {
 
 /* ================= VERIFY OTP ================= */
 export async function verifyOtp(data) {
-  const res = await fetch(`/api/verify-otp`, {
+  const res = await fetch(`${BASE_URL}/api/verify-otp`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
