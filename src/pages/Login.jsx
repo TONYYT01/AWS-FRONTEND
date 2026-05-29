@@ -12,7 +12,7 @@ export default function Login() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    if (token) navigate("/afterlogin", { replace: true });
+    if (token) navigate("/api/afterlogin", { replace: true });
   }, [navigate]);
 
   const startY = useRef(0);

@@ -1,7 +1,7 @@
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 
-const BASE_URL = "https://back-end-project-group.onrender.com";
+// const BASE_URL = "https://back-end-project-group.onrender.com";
 
 const COLORS = [
   { primary: "#34d399", secondary: "#059669", glow: "rgba(52,211,153,0.35)" },
@@ -22,7 +22,7 @@ export default function Home() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    fetch(`${BASE_URL}/advertisements`)
+    fetch(`/api/advertisements`)
       .then(r => r.json())
       .then(d => { if (d.status === "success") setAds(d.ads || []); })
       .catch(() => {})

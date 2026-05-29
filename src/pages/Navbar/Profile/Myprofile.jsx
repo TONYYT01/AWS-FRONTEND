@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const BASE_URL = "http://localhost:5000";
+// const BASE_URL = "http://localhost:5000";
 
 const roleColors = {
   admin:  { bg: "rgba(251,191,36,0.1)",  border: "rgba(251,191,36,0.3)",  text: "#fbbf24" },
@@ -32,7 +32,7 @@ export default function MyProfile() {
   useEffect(() => {
     async function fetchUser() {
       try {
-        const res = await fetch(`${BASE_URL}/get-user`, {
+        const res = await fetch(`/api/get-user`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email }),
