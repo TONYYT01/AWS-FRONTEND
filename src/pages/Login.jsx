@@ -12,7 +12,7 @@ export default function Login() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    if (token) navigate(`${BASE_URL}/api/afterlogin`, { replace: true });
+    if (token) navigate(`${BASE_URL}/afterlogin`, { replace: true });
   }, [navigate]);
 
   const startY = useRef(0);
@@ -83,7 +83,7 @@ export default function Login() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     try {
-      const res = await fetch(`/login`, {
+      const res = await fetch(`${BASE_URL}/api/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
