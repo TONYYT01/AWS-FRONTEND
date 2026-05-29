@@ -3,7 +3,7 @@
 
 /* ================= SIGNUP ================= */
 export async function signup(data) {
-  const res = await fetch(`/api/signup`, {
+  const res = await fetch(`/signup`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -13,7 +13,7 @@ export async function signup(data) {
 
 /* ================= VERIFY OTP ================= */
 export async function verifyOtp(data) {
-  const res = await fetch(`/api/verify-otp`, {
+  const res = await fetch(`/verify-otp`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -23,7 +23,7 @@ export async function verifyOtp(data) {
 
 /* ================= RESEND OTP ================= */
 export async function resendOtp(data) {
-  const res = await fetch(`${BASE_URL}/resend-otp`, {
+  const res = await fetch(`/api/resend-otp`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
