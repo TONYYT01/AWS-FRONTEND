@@ -1,5 +1,3 @@
-// const BASE_URL = "http://18.118.169.82:5000";
-// const BASE_URL = "https://back-end-project-group.onrender.com";
 
 /* ================= SIGNUP ================= */
 export async function signup(data) {

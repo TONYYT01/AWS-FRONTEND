@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-// const BASE_URL = "http://localhost:5000";
 
 export default function Edit() {
   const navigate = useNavigate();
