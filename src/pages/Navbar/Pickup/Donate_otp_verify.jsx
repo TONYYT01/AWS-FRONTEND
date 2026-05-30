@@ -63,7 +63,7 @@ export default function DonateOtpVerify() {
   /* ================= RESEND OTP ================= */
   const handleResend = async () => {
     try {
-      const res = await fetch(`${BASE_URL}/resend-donate-otp`, {
+      const res = await fetch(`${BASE_URL}/api/resend-donate-otp`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ donation_id: donationId })
