@@ -87,7 +87,7 @@ export default function MyRides() {
           <div className="space-y-4">
             {rides.map((ride, index) => (
               <RideCard
-                key={ride._id}
+                key={ride.id}
                 ride={ride}
                 index={index}
                 navigate={navigate}
@@ -115,8 +115,7 @@ function RideCard({ ride, navigate, index }) {
     >
       <div>
         <h2 className="font-bold text-lg text-white">
-          {ride.item_type.toUpperCase()} – {ride.item_name}
-        </h2>
+{(ride.item_type || "other").toUpperCase()} – {ride.item_name || ride.food_type || "Donation"}        </h2>
 
         <p className="text-sm text-gray-400">
           Quantity: {ride.quantity}
