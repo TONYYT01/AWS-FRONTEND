@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
+const BASE_URL = "http://18.118.169.82:5000";
 
 export default function Edit() {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ export default function Edit() {
   useEffect(() => {
     async function fetchUser() {
       try {
-        const res  = await fetch(`/api/get-user`, {
+        const res  = await fetch(`${BASE_URL}/api/get-user`, {
           method:"POST", headers:{"Content-Type":"application/json"},
           body: JSON.stringify({ email })
         });
