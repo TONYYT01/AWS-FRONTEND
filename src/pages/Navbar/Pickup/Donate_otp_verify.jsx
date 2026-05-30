@@ -48,7 +48,7 @@ export default function DonateOtpVerify() {
 
       const data = await res.json();
 
-      if (data.status === "donation_verified_and_picked") {
+      if (data.status === "pickup_verified") {
         navigate("/afterlogin/pickup/my-rides");
       } else {
         alert(data.status);
