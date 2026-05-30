@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-// const BASE_URL = "http://18.118.169.82:5000";
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "http://18.118.169.82:5000";
+// const BASE_URL = "http://localhost:5000";
 
 export default function Food() {
   const navigate = useNavigate();
