@@ -33,7 +33,7 @@ export default function Delivery() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          donation_id: donation._id,
+          donation_id: donation.id,
           rider_email: user.email
         })
       });
@@ -98,8 +98,9 @@ export default function Delivery() {
         {/* INFO */}
         <div className="bg-white/5 rounded-xl p-4 space-y-1">
           <p className="font-semibold text-white">
-            {donation.item_type.toUpperCase()} – {donation.item_name}
-          </p>
+  {(donation.item_type || "other").toUpperCase()} — {" "}
+  {donation.item_name || donation.food_type || "Donation"}
+</p>
           <p className="text-sm text-gray-400">
             Quantity: {donation.quantity}
           </p>
