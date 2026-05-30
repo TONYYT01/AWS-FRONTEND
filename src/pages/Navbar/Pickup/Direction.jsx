@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-const BASE_URL = "https://back-end-project-group.onrender.com";
+const BASE_URL = "http://18.118.169.82:5000";
 
 export default function Direction() {
   const navigate = useNavigate();
@@ -38,7 +38,7 @@ export default function Direction() {
   const handlePickup = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`${BASE_URL}/rider/pickup`, {
+      const res = await fetch(`${BASE_URL}/api/rider/pickup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

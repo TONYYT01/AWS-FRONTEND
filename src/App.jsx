@@ -31,86 +31,86 @@ import DonateOtpVerify from "./pages/Navbar/Pickup/Donate_otp_verify";
 import MyRides from "./pages/Navbar/Pickup/My_rides";
 import Delivery from "./pages/Navbar/Pickup/Delivery";
 
-
 // Auth helpers
 import ProtectedRoute from "./hooks/ProtectedRoute";
 import { isLoggedIn } from "./hooks/useAuth";
 
 export default function App() {
-  const [email, setEmail] = useState(null);
+const [email, setEmail] = useState(null);
 
-  return (
-    <Routes>
+return ( <Routes>
 
-      {/* ================= ROOT ================= */}
-      <Route
-        path="/"
-        element={
-          isLoggedIn() ? (
-            <Navigate to="/afterlogin" replace />
-          ) : (
-            <OpeningPage />
-          )
-        }
-      />
+```
+  {/* ================= ROOT ================= */}
+  <Route
+    path="/"
+    element={
+      isLoggedIn() ? (
+        <Navigate to="/afterlogin" replace />
+      ) : (
+        <OpeningPage />
+      )
+    }
+  />
 
-      {/* ================= PUBLIC ================= */}
-      <Route path="/signup" element={<Signup setEmail={setEmail} />} />
-      <Route path="/verify-otp" element={<VerifyOtp email={email} />} />
+  {/* ================= PUBLIC ================= */}
+  <Route
+    path="/signup"
+    element={<Signup setEmail={setEmail} />}
+  />
 
-      <Route
-        path="/login"
-        element={
-          isLoggedIn() ? (
-            <Navigate to="/afterlogin" replace />
-          ) : (
-            <Login />
-          )
-        }
-      />
+  <Route
+    path="/verify-otp"
+    element={<VerifyOtp email={email} />}
+  />
 
-      {/* ================= PROTECTED ================= */}
-      <Route
-        path="/afterlogin"
-        element={
-          <ProtectedRoute>
-            <Afterlogin />
-          </ProtectedRoute>
-        }
-      >
-        <Route path="/afterlogin" element={<Afterlogin />}>
-  {/* existing routes */}
+  <Route
+    path="/login"
+    element={
+      isLoggedIn() ? (
+        <Navigate to="/afterlogin" replace />
+      ) : (
+        <Login />
+      )
+    }
+  />
 
+  {/* ================= PROTECTED ================= */}
+  <Route
+    path="/afterlogin"
+    element={
+      <ProtectedRoute>
+        <Afterlogin />
+      </ProtectedRoute>
+    }
+  >
+    {/* HOME */}
+    <Route index element={<Home />} />
+    <Route path="about" element={<About />} />
+    <Route path="contact" element={<Contact />} />
 
-</Route>
-        {/* HOME */}
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact />} />
+    {/* PROFILE */}
+    <Route path="profile" element={<Myprofile />} />
+    <Route path="profile/edit" element={<Edit />} />
 
+    {/* DONATE */}
+    <Route path="donate" element={<DonationsType />} />
+    <Route path="donate/food" element={<Food />} />
+    <Route path="donate/clothes" element={<Cloths />} />
+    <Route path="donate/other" element={<Other />} />
+    <Route path="donate/request" element={<MyRequests />} />
+    <Route path="donate/nearorphanages" element={<NearbyOrphanages />} />
+    <Route path="donate/verify" element={<DonateOtpVerify />} />
 
+    {/* PICKUP */}
+    <Route path="pickup/requests" element={<UsersRequests />} />
+    <Route path="pickup/direction" element={<Direction />} />
+    <Route path="pickup/verify" element={<DonateOtpVerify />} />
+    <Route path="pickup/my-rides" element={<MyRides />} />
+    <Route path="pickup/delivery" element={<Delivery />} />
+  </Route>
 
-        {/* ================= PROFILE ================= */}
-        <Route path="profile" element={<Myprofile />} />
-        <Route path="profile/edit" element={<Edit />} />
+</Routes>
 
-        {/* ================= DONATE ================= */}
-        <Route path="donate" element={<DonationsType />} />
-        <Route path="donate/food" element={<Food />} />
-        <Route path="donate/clothes" element={<Cloths />} />
-        <Route path="donate/other" element={<Other />} />
-        <Route path="donate/request" element={<MyRequests />} />
-        <Route path="donate/nearorphanages" element={<NearbyOrphanages />} />
-
-        {/* ================= PICKUP ================= */}
-        <Route path="pickup/requests" element={<UsersRequests />} />
-        <Route path="pickup/direction" element={<Direction />} />
-        <Route path="pickup/verify" element={<DonateOtpVerify />} />
-        <Route path="pickup/my-rides" element={<MyRides />} />
-        <Route path="pickup/delivery" element={<Delivery />} />
-
-      </Route>
-
-    </Routes>
-  );
+);
 }

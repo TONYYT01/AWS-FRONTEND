@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const BASE_URL = "https://back-end-project-group.onrender.com";
+const BASE_URL = "http://18.118.169.82:5000";
+
 
 const CLOTHES_TYPES = [
   { label: "Shirts / T-Shirts", icon: "👕" },
@@ -72,7 +73,7 @@ export default function Cloths() {
     }
     setLoading(true);
     try {
-      const res = await fetch(`${BASE_URL}/donate`, {
+      const res = await fetch(`${BASE_URL}/api/donate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

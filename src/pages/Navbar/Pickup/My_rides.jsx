@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const BASE_URL = "https://back-end-project-group.onrender.com";
+const BASE_URL = "http://18.118.169.82:5000";
 
 export default function MyRides() {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ export default function MyRides() {
   useEffect(() => {
     async function fetchRides() {
       try {
-        const res = await fetch(`${BASE_URL}/rider/my-rides`, {
+        const res = await fetch(`${BASE_URL}/api/rider/my-rides`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ rider_email: user.email })

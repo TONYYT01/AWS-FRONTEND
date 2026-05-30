@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-const BASE_URL = "https://back-end-project-group.onrender.com";
+// const BASE_URL = "http://18.118.169.82:5000";
+const BASE_URL = "http://localhost:5000";
 
 const STATUS_META = {
   not_picked: {
@@ -50,7 +51,7 @@ export default function MyRequests() {
 
   async function fetchRequests() {
     try {
-      const res  = await fetch(`${BASE_URL}/my-requests`, {
+      const res  = await fetch(`${BASE_URL}/api/my-requests`, {
         method:  "POST",
         headers: { "Content-Type": "application/json" },
         body:    JSON.stringify({ email: user.email }),
@@ -597,19 +598,24 @@ export default function MyRequests() {
                         <div className="mr-meta-value">{req.quantity}</div>
                       </div>
                       <div className="mr-meta-item">
-                        <div className="mr-meta-label">Price</div>
-                        <div className="mr-meta-value">
-                          {req.price_type === "free" ? "Free" : `₹${req.price_amount}`}
-                        </div>
-                      </div>
-                      <div className="mr-meta-item">
-                        <div className="mr-meta-label">Date</div>
-                        <div className="mr-meta-value">
-                          {new Date(req.createdAt).toLocaleDateString("en-IN", {
-                            day: "numeric", month: "short", year: "numeric"
-                          })}
-                        </div>
-                      </div>
+  <div className="mr-meta-label">Item</div>
+  <div className="mr-meta-value">
+    {req.item_name}
+  </div>
+</div>
+
+<div className="mr-meta-item">
+  <div className="mr-meta-label">Date</div>
+  <div className="mr-meta-value">
+    {req.created_at
+      ? new Date(req.created_at).toLocaleDateString("en-IN", {
+          day: "numeric",
+          month: "short",
+          year: "numeric"
+        })
+      : "-"}
+  </div>
+</div>
                       {req.pickup_location && (
                         <div className="mr-meta-item">
                           <div className="mr-meta-label">Pickup</div>

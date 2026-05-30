@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const BASE_URL = "https://back-end-project-group.onrender.com";
+const BASE_URL = "http://18.118.169.82:5000";
 
 export default function DonateOtpVerify() {
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ export default function DonateOtpVerify() {
     setLoading(true);
 
     try {
-      const res = await fetch(`${BASE_URL}/verify-donate-otp`, {
+      const res = await fetch(`${BASE_URL}/api/verify-donate-otp`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
