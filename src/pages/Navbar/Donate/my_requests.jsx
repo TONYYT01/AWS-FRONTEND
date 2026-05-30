@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-// const BASE_URL = "http://18.118.169.82:5000";
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "http://18.118.169.82:5000";
+// const BASE_URL = "http://localhost:5000";
 
 const STATUS_META = {
   not_picked: {
