@@ -40,7 +40,7 @@ export default function Edit() {
     e.preventDefault();
     setUpdating(true); setError("");
     try {
-      const res  = await fetch(`${BASE_URL}/update-profile`, {
+      const res  = await fetch(`${BASE_URL}/api/update-profile`, {
         method:"PUT", headers:{"Content-Type":"application/json"},
         body: JSON.stringify({ email, ...form })
       });
