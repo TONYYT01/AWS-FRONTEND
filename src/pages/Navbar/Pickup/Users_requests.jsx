@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-const BASE_URL = "http://localhost:5000";
+// const BASE_URL = "http://localhost:5000";
+const BASE_URL = "http://18.118.169.82:5000";
 
 /* ─── helpers ─────────────────────────────────────────────────── */
 const fmt = (iso) =>
